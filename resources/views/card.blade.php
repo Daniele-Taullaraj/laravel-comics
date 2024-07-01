@@ -7,15 +7,19 @@
 </head>
 <body>
 
+<h1>ciao</h1>
 
-        <h4>stampa studenti</h4>
-    <ul>
-            @foreach ($data['studenti'] as $studente)
-                <li>{{ $studente }}</li>
+        <ul>
+            @foreach ($fumetti as $studente)
+                <li>{{ $studente['title'] }} <br> {{ $studente['price'] }} </li>
             @endforeach
         </ul>
 
-  
-
 </body>
 </html>
+
+<style>
+    h1{
+        color:red;
+    }
+</style>

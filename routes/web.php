@@ -14,9 +14,17 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    $data = [
+                "studenti" => [
+                    "Andrea",
+                    "Alessia",
+                    "Daniele",
+                    "Giuseppe"
+                ]
+            ];
+    return view('welcome', ['data' => $data]);
 });
 
 Route::get('/home', function () {
-    return view('welcome');
+    return view('card', config("store"));
 });
