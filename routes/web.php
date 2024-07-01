@@ -19,11 +19,26 @@ Route::get('/', function () {
 })->name("welcome");
 
 
+// Route::get('/card/{indice}', function ($indice) {
+//     $fumetti=config("store.fumetti");
+//     $data=[
+//         "fumetto"=> $fumetti[$indice]
+//     ];
+    
+//     return view('card', $data);
+// })->name("card");
+
 Route::get('/card/{indice}', function ($indice) {
     $fumetti=config("store.fumetti");
-    $data=[
-        "fumetto"=> $fumetti[$indice]
-    ];
-    return view('card', $data);
+
+    if ($indice < count($fumetti) && $indice >= 0) {
+        $data=[
+            "fumetto"=> $fumetti[$indice]
+        ];
+        return view('card', $data);
+    } else {
+        abort(404);
+    }
+
 })->name("card");
 

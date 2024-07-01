@@ -12,7 +12,7 @@
 
             <div class="col-2 bg-dark text-white border" style="height: 28rem">
                 <img src="{{$fumetto['thumb']}}" alt="" class="w-100 h-75">
-                <a href="/card/{{$indice}}"><h5>{{ $fumetto['title'] }}</h5></a>
+                <a href="{{ route('card', $indice) }}"><h5>{{ $fumetto['title'] }}</h5></a>
             
             <p>{{ $fumetto['price'] }}</p>
             </div>
