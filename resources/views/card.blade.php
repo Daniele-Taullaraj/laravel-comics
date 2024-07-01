@@ -1,25 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Laravel Comics</title>
-</head>
-<body>
 
-<h1>ciao</h1>
+@extends('layouts.nomelayout')
 
-        <ul>
-            @foreach ($fumetti as $studente)
-                <li>{{ $studente['title'] }} <br> {{ $studente['price'] }} </li>
-            @endforeach
-        </ul>
+@section('content')
 
-</body>
-</html>
+<div class="container-fluid">
+    <h4>{{ $fumetto['title'] }}</h4>
+    <h4>{{ $fumetto['price'] }}</h4>
+    <img src="{{$fumetto['thumb']}}" alt="">
 
-<style>
-    h1{
-        color:red;
-    }
-</style>
+</div>
+        
+@endsection

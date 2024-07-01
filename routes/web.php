@@ -14,17 +14,16 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    $data = [
-                "studenti" => [
-                    "Andrea",
-                    "Alessia",
-                    "Daniele",
-                    "Giuseppe"
-                ]
-            ];
-    return view('welcome', ['data' => $data]);
-});
+    $data = config("store");
+    return view('welcome', $data);
+})->name("welcome");
 
-Route::get('/home', function () {
-    return view('card', config("store"));
-});
+
+Route::get('/card/{indice}', function ($indice) {
+    $fumetti=config("store.fumetti");
+    $data=[
+        "fumetto"=> $fumetti[$indice]
+    ];
+    return view('card', $data);
+})->name("card");
+

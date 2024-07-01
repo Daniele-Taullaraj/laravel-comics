@@ -1,21 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Laravel Comics</title>
-</head>
-<body>
+@extends('layouts.nomelayout')
 
+@section('content')
 
-        <h4>stampa studenti</h4>
-    <ul>
-            @foreach ($data['studenti'] as $studente)
-                <li>{{ $studente }}</li>
-            @endforeach
-        </ul>
+<h4 class="text-center fw-bold text-danger">TUTTI I COMICS</h4>
 
-  
+<div class="container-fluid">
 
-</body>
-</html>
+    <div class="row">
+
+    @foreach($fumetti as $indice=>$fumetto)
+
+            <div class="col-2 bg-dark text-white border" style="height: 28rem">
+                <img src="{{$fumetto['thumb']}}" alt="" class="w-100 h-75">
+                <a href="/card/{{$indice}}"><h5>{{ $fumetto['title'] }}</h5></a>
+            
+            <p>{{ $fumetto['price'] }}</p>
+            </div>
+    @endforeach
+
+    </div>
+
+</div>
+
+@endsection

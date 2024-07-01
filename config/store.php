@@ -1,14 +1,5 @@
 <?php
 
-// return[
-//     'studenti' => [
-//         "Andrea",
-//         "Alessia",
-//         "Daniele",
-//         "Giuseppe",
-//     ],
-// ];
-
 return [
     'fumetti'=>[
         [
